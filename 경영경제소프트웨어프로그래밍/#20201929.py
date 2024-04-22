@@ -81,5 +81,4 @@ while True :
         continue
 
 print()
-input('Enter키를 누르면 종료됩니다.')
 exit()
