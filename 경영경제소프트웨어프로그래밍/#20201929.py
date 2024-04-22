@@ -8,22 +8,21 @@ while True :
         ## 1번 답안 20201929 이상원 ##
         number, hour, minute, second = 0, 0, 0, 0
 
-        number = int(input("초 입력: "))
-        hour = number // 3600
-        minute = (number % 3600) // 60
-        second = (number % 3600) % 60
-
-        if hour!=0 and minute!=0 and second!=0 :
+        number = int(input("초 입력: "))                    # 초 입력
+        hour = number // 3600                               # 입력받은 수(초)를 3600으로 나눈 몫 <- 시간 단위
+        minute = (number % 3600) // 60                      # 3600으로 나눈 "나머지"를 60으로 나눈 몫 <- 분 단위
+        second = (number % 3600) % 60                       # 3600으로 나눈 "나머지"를 60으로 나눈 "나머지" <- 초 단위
+        if hour!=0 and minute!=0 and second!=0 :            # 시간, 분, 초 단위가 모두 0이 아니면 -> 00시간 00분 00초
             print(f'{hour}시간 {minute}분 {second}초')
-        elif hour!=0 and minute!=0 and second==0 :
+        elif hour!=0 and minute!=0 and second==0 :          # 시간, 분 단위가 0 아니고, 초 단위가 0이면 -> 00시간 00분
             print(f'{hour}시간 {minute}분')
-        elif hour!=0 and minute==0 and second==0 :
+        elif hour!=0 and minute==0 and second==0 :          # 시간 단위가 0이 아니고, 분,초 단위가 0이면 -> 00시간
             print(f'{hour}시간')
-        elif hour==0 and minute!=0 and second!=0 :
+        elif hour==0 and minute!=0 and second!=0 :          # 시간 단위가 0이고, 분,초 단위가 0이 아니면 -> 00분 00초
             print(f'{minute}분 {second}초')
-        elif hour==0 and minute!=0 and second==0 :
+        elif hour==0 and minute!=0 and second==0 :          # 시간,초 단위가 0이고 분 단위가 0이 아니면 -> 00분
             print(f'{minute}분')
-        elif hour==0 and minute==0 and second!=0 :
+        elif hour==0 and minute==0 and second!=0 :          # 시간,분 단위가 0이고 초 단위가 0이 아니면 -> 00초
             print(f'{second}초')
         
         
@@ -55,7 +54,7 @@ while True :
             count = 0
 
             while True :
-                count += 1
+                count += 13
                 ready_to_append = random.randint(1, Num)
 
                 if ready_to_append in List :
